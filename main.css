@@ -1,0 +1,70 @@
+:root {
+    --clr-primary: #2356fd;
+
+    --clr-secondary: #394555;
+
+    --clr-accent: #4688ff;
+    --clr-white: #ffffff;
+    --clr-grey: #f1f1f1;
+    --clr-black: #000;
+
+    --font-family: 'Roboto', sans-serif;
+
+    --font-size-xs: 14px;
+    --font-size-sm: 16px;
+    --font-size-rg: 18px;
+    --font-size-md: 25px;
+    --font-size-lg: 30px;
+    --font-size-xl: 50px;
+    --font-size-sp: 80px;
+
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+    --font-weight-900: 900;
+}
+
+
+/* ==============================RESETS============================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: var(--font-family);
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-inline: auto;
+}
+
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+img,
+picture,
+svg {
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+/* __________________________RESETS_________________________________ */
