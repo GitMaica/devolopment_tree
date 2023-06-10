@@ -68,3 +68,141 @@ select {
     font: inherit;
 }
 /* __________________________RESETS_________________________________ */
+
+
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 6rem;
+    border: 2px solid grey;
+    padding: 0.3rem 0.4rem;
+}
+
+.top-row{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-container{
+    display: flex;
+    justify-self: start;
+    align-items: center;
+}
+
+.logo-container>p{
+    margin-left: -0.7rem;
+    font-size: var(--font-size-rg);
+    font-weight: var(--font-weight-400);
+}
+
+.logo-box{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.logo-box > img{
+    object-fit: cover;
+}
+
+
+.buttons-container{
+    display: flex;
+    padding-right: 8px;
+    gap: 15px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-self: end;
+}
+
+.hamburger{
+    height: 4px;
+    width: 32px;
+    background-color: grey;
+    border-radius: 2px;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: relative;
+    top: -24px;
+    display: block;
+    height: 4px;
+    width: 100%;
+    margin: 15px 0;
+    background: grey;
+    border-radius: 2px;
+}
+
+.hamburger.active{
+    
+}
+
+.hamburger.active::before,
+.hamburger.active::after{
+    transform: rotate();
+}
+
+.search-container{
+    margin: auto;
+}
+
+.search-container>button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    margin-left: -20px;
+}
+
+.search-container>input{
+    width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+
+.assist-btns{
+    display: flex;
+    gap: 10px;
+    margin: 10px 8px 0px 16px;
+}
+
+.assist-btns>button{
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 50vw;
+    padding: 0.4rem;
+}
+
+.category-bar-container{
+    margin-block: 1rem;
+}
+
+.link-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.information-bar-container{
+    z-index: -1;
+}
+
+main{
+    padding: 0 2rem;
+}
+
+.product-title{
+    margin-bottom: 1rem;
+}
+
+.product-container{
+    display: grid;
+    
+}
