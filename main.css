@@ -59,6 +59,7 @@ img,
 picture,
 svg {
     max-width: 100%;
+    display: block;
 }
 
 input,
@@ -69,25 +70,27 @@ select {
 }
 /* __________________________RESETS_________________________________ */
 
+.nav-container{
+    min-height: 8rem;
+    border-bottom: 2px solid grey;
+}
 
 .nav-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    min-height: 6rem;
-    border: 2px solid grey;
-    padding: 0.3rem 0.4rem;
+    padding: 0.85rem 1rem;
 }
 
 .top-row{
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .logo-container{
     display: flex;
-    justify-self: start;
+    justify-content: start;
     align-items: center;
 }
 
@@ -98,6 +101,7 @@ select {
 }
 
 .logo-box{
+    margin-left: -1rem;
     max-width: 80px;
     max-height: 80px;
 }
@@ -107,52 +111,33 @@ select {
 }
 
 
-.buttons-container{
+.links-container{
     display: flex;
-    padding-right: 8px;
-    gap: 15px;
+    gap: 1.75rem;
 }
 
-.menu{
+
+.middle-row{
     display: flex;
-    align-items: center;
-    justify-self: end;
-}
-
-.hamburger{
-    height: 4px;
-    width: 32px;
-    background-color: grey;
-    border-radius: 2px;
-}
-
-.hamburger::before,
-.hamburger::after{
-    content: "";
-    position: relative;
-    top: -24px;
-    display: block;
-    height: 4px;
+    justify-content: center;
     width: 100%;
-    margin: 15px 0;
-    background: grey;
-    border-radius: 2px;
-}
-
-.hamburger.active{
-    
-}
-
-.hamburger.active::before,
-.hamburger.active::after{
-    transform: rotate();
 }
 
 .search-container{
-    margin: auto;
+    display: flex;
+    width: 100%;
+}
+
+.search-container>input{
+    flex: 1;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 6px;
 }
 
 .search-container>button{
+    cursor: pointer;
     width: 40px;
     height: 40px;
     border: 1px solid grey;
@@ -160,11 +145,8 @@ select {
     margin-left: -20px;
 }
 
-.search-container>input{
-    width: 300px;
-    height: 40px;
-    border: 1px solid grey;
-    border-radius: 6px;
+.search-container>input:focus + button{
+    border: 2px solid orange;
 }
 
 .assist-btns{
@@ -205,4 +187,49 @@ main{
 .product-container{
     display: grid;
     
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+}
+
+.hamburger{
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: grey;
+    border-radius: 4px;
+    transition: all 0.25s ease
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    background: grey;
+    border-radius: 4px;
+}
+
+.hamburger::before{
+    top: -10px;
+}
+
+.hamburger::after{
+    top: 10px;
+}
+
+.hamburger.active{
+    transform: rotate(135deg);
+}
+
+.hamburger.active::before,
+.hamburger.active::after{
+    top: 0;
+    transform: rotate(90deg);
 }
