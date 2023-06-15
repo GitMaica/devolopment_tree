@@ -110,19 +110,17 @@ select {
     object-fit: cover;
 }
 
-.menu-wrapper>ul{
-        display: flex;
-        gap: 40px;
-}
-
-
-
 .links-container{
     display: flex;
+    align-items: center;
     gap: 1.75rem;
     min-width: 80px;
 }
 
+.fa-cart-shopping{
+    font-size: 1.8rem;
+    color: #000;
+}
 
 .middle-row{
     display: flex;
@@ -185,6 +183,11 @@ select {
     border: 1px solid grey;
     border-radius: 50vw;
     padding: 0.4rem;
+}
+
+.menu-wrapper>ul{
+    display: flex;
+    gap: 40px;
 }
 
 .menu{
