@@ -110,6 +110,11 @@ select {
     object-fit: cover;
 }
 
+.menu-wrapper>ul{
+    display: flex;
+    gap: 40px;
+}
+
 .links-container{
     display: flex;
     align-items: center;
@@ -117,9 +122,31 @@ select {
     min-width: 80px;
 }
 
+.cart-wrapper{
+    position: relative;
+}
+
+.cart-num-wrapper{
+    position: absolute;
+    top: -2px;
+    left: 6px;
+    background-color: rgb(255, 255, 255);
+    width: 28px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+.cart-num-wrapper > p{
+    translate: 7px 0;
+}
+
+#cart-count{
+    color: orangered;
+    font-weight: bold;
+}
+
 .fa-cart-shopping{
     font-size: 1.8rem;
-    color: #000;
+    color: grey;
 }
 
 .middle-row{
@@ -139,6 +166,10 @@ select {
     padding: 8px;
     border: 1px solid grey;
     border-radius: 6px;
+}
+
+.search-container > input::placeholder{
+    color: grey;
 }
 
 .search-container>button{
@@ -185,11 +216,6 @@ select {
     padding: 0.4rem;
 }
 
-.menu-wrapper>ul{
-    display: flex;
-    gap: 40px;
-}
-
 .menu{
     display: none;
     height: 32px;
@@ -198,10 +224,10 @@ select {
 
 .hamburger{
     position: relative;
-    z-index: 999;
+    z-index: 600;
     height: 5px;
     width: 100%;
-    background-color: grey;
+    background-color: orangered;
     border-radius: 4px;
 }
 
@@ -209,11 +235,11 @@ select {
 .hamburger::after{
     content: "";
     position: absolute;
-    z-index: 999;
+    z-index: 600;
     display: block;
     height: 5px;
     width: 100%;
-    background: grey;
+    background: orangered;
     border-radius: 4px;
 }
 
@@ -229,11 +255,6 @@ select {
     transform: rotate(135deg);
     top: 2px;
     left: 2px;
-    /* scale: 0; */
-}
-
-.hamburger.active{
-    /* scale: 1; */
 }
 
 .hamburger.active::before,
@@ -273,10 +294,11 @@ main{
         gap: 40px;
         padding: 100px 80px;
         background-color: #394555;
-        opacity: 50%;
+        opacity: 80%;
         inset: 0 0 0 30%;
         transform: translateX(100%);
         transition: transform 0.4s ease-out;
+        z-index: 999;
     }
 
     .menu-wrapper.opened{
