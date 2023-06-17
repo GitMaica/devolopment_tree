@@ -20,19 +20,23 @@ openModal.addEventListener("click", () => {
     dial.show()
 })
 
-dial.addEventListener("click", (e) => {
+window.addEventListener("click", e => {
     const dialDimentions = dial.getBoundingClientRect()
     if(
         e.clientX < dialDimentions.left ||
         e.clientX > dialDimentions.right ||
         e.clientY < dialDimentions.top ||
         e.clientY > dialDimentions.bottom
-        ){
-            dial.close()
-        }
+    ) {
+        dial.close()
+    }
 })
     
 closeModal.addEventListener("click", () => {
+        dial.close()
+})
+
+dial.addEventListener("click", () => {
         dial.close()
 })
 
@@ -45,3 +49,17 @@ hamburger.addEventListener("click", function(){
     menu.classList.toggle("opened")
     hambBar.classList.toggle("relocate")
 })
+
+// window.addEventListener("click", e => {
+//     const dialDimentions = menu.getBoundingClientRect()
+//     if(
+//         e.clientX < dialDimentions.left ||
+//         e.clientX > dialDimentions.right ||
+//         e.clientY < dialDimentions.top ||
+//         e.clientY > dialDimentions.bottom
+//     ) {
+//         menu.classList.toggle("opened")
+//         hamburger.classList.toggle("active")
+//         hambBar.classList.toggle("relocate")
+//     }
+// })
