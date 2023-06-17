@@ -12,6 +12,30 @@ const cartDecrement = () =>{
         cartNumber.innerText = count
 }
 
+const openModal = document.querySelector(".open-loca-dial")
+const dial = document.querySelector(".modal")
+const closeModal = document.querySelector(".close-loca-dial")
+
+openModal.addEventListener("click", () => {
+    dial.show()
+})
+
+dial.addEventListener("click", (e) => {
+    const dialDimentions = dial.getBoundingClientRect()
+    if(
+        e.clientX < dialDimentions.left ||
+        e.clientX > dialDimentions.right ||
+        e.clientY < dialDimentions.top ||
+        e.clientY > dialDimentions.bottom
+        ){
+            dial.close()
+        }
+})
+    
+closeModal.addEventListener("click", () => {
+        dial.close()
+})
+
 const hamburger = document.querySelector(".hamburger")
 const menu = document.querySelector(".menu-wrapper")
 const hambBar = document.querySelector(".menu")

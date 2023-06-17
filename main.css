@@ -122,6 +122,18 @@ select {
     min-width: 80px;
 }
 
+.modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+
 .cart-wrapper{
     position: relative;
 }
