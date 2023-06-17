@@ -307,6 +307,8 @@ main{
     .menu{
         display: flex;
         align-items: center;
+        background: transparent;
+        border: none;
     }
 
     .menu-wrapper{

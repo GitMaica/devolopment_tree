@@ -45,6 +45,14 @@ const menu = document.querySelector(".menu-wrapper")
 const hambBar = document.querySelector(".menu")
 
 hamburger.addEventListener("click", function(){
+    const isOpened = hambBar.getAttribute('aria-expanded')
+
+    if(isOpened === "true"){
+        hambBar.setAttribute("aria-expanded", "false")
+    } else{
+        hambBar.setAttribute("aria-expanded", "true")
+    }
+
     hamburger.classList.toggle("active")
     menu.classList.toggle("opened")
     hambBar.classList.toggle("relocate")
