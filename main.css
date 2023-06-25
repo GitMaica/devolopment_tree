@@ -115,36 +115,11 @@ select {
     gap: 40px;
 }
 
-.links-container{
+.right-container{
     display: flex;
     align-items: center;
     gap: 1.75rem;
     min-width: 80px;
-}
-
-.modal{
-    border: 0;
-    background: transparent;
-    padding: 48px 0 0 15px;
-}
-
-.dialog-inside-wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    min-width: 250px;
-    height: 200px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
-}
-
-.cart-wrapper{
-    position: relative;
 }
 
 .cart-num-wrapper{
@@ -227,14 +202,45 @@ select {
 
 .assist-btns{
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .assist-btns>button{
     background: transparent;
     border: 1px solid grey;
     border-radius: 50vw;
-    padding: 0.4rem;
+    padding: 0.4rem 0.7rem;
+}
+
+.loca-modal{
+    border: 0;
+    background: transparent;
+    padding: 48px 0 0 15px;
+}
+
+.expert-dial{
+    border: 0;
+    background: transparent;
+    padding: 50px 0 0 40px;
+}
+
+.dialog-inside-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    min-width: 250px;
+    height: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+}
+
+.cart-wrapper{
+    position: relative;
 }
 
 .menu{

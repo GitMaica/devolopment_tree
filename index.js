@@ -3,46 +3,68 @@ let count = 0
 
 const cartIncremment = () =>{
     count += 1
-    cartNumber.innerText = count
+    cartNumber.textContent = count
 }
 
 const cartDecrement = () =>{
-    if(cartNumber.innerText > 0)
+    if(cartNumber.textContent > 0)
         count -= 1
-        cartNumber.innerText = count
+        cartNumber.textContent = count
 }
 
 const openModal = document.querySelector(".open-loca-dial")
-const dial = document.querySelector(".modal")
+const openExpert = document.querySelector(".open-expert-dial")
+const locaDial = document.querySelector(".loca-modal")
+const expertDial = document.querySelector(".expert-dial")
 const closeModal = document.querySelector(".close-loca-dial")
 
 openModal.addEventListener("click", () => {
-    dial.show()
+    locaDial.show()
+})
+
+openExpert.addEventListener("click", () => {
+    expertDial.show()
 })
 
 window.addEventListener("click", e => {
-    const dialDimentions = dial.getBoundingClientRect()
+    const dialDimentions = locaDial.getBoundingClientRect()
     if(
         e.clientX < dialDimentions.left ||
         e.clientX > dialDimentions.right ||
         e.clientY < dialDimentions.top ||
         e.clientY > dialDimentions.bottom
     ) {
-        dial.close()
+        locaDial.close()
     }
 })
-    
+
 closeModal.addEventListener("click", () => {
-        dial.close()
+    locaDial.close()
 })
 
-dial.addEventListener("click", () => {
-        dial.close()
+locaDial.addEventListener("click", () => {
+    locaDial.close()
 })
 
-const hamburger = document.querySelector(".hamburger")
-const menu = document.querySelector(".menu-wrapper")
-const hambBar = document.querySelector(".menu")
+window.addEventListener("click", e => {
+    const dialDimentions2 = expertDial.getBoundingClientRect()
+    if(
+        e.clientX < dialDimentions2.left ||
+        e.clientX > dialDimentions2.right ||
+        e.clientY < dialDimentions2.top ||
+        e.clientY > dialDimentions2.bottom
+        ) {
+            expertDial.close()
+        }
+    })
+    
+expertDial.addEventListener("click", () => {
+    expertDial.close()
+})
+    
+    const hamburger = document.querySelector(".hamburger")
+    const menu = document.querySelector(".menu-wrapper")
+    const hambBar = document.querySelector(".menu")
 
 hamburger.addEventListener("click", function(){
     const isOpened = hambBar.getAttribute('aria-expanded')
@@ -57,17 +79,3 @@ hamburger.addEventListener("click", function(){
     menu.classList.toggle("opened")
     hambBar.classList.toggle("relocate")
 })
-
-// window.addEventListener("click", e => {
-//     const dialDimentions = menu.getBoundingClientRect()
-//     if(
-//         e.clientX < dialDimentions.left ||
-//         e.clientX > dialDimentions.right ||
-//         e.clientY < dialDimentions.top ||
-//         e.clientY > dialDimentions.bottom
-//     ) {
-//         menu.classList.toggle("opened")
-//         hamburger.classList.toggle("active")
-//         hambBar.classList.toggle("relocate")
-//     }
-// })
