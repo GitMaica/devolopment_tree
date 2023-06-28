@@ -1,6 +1,7 @@
 const cartNumber = document.querySelector("#cart-count")
 let count = 0
 
+
 const cartIncremment = () =>{
     count += 1
     cartNumber.textContent = count
