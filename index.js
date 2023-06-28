@@ -43,9 +43,9 @@ closeModal.addEventListener("click", () => {
     locaDial.close()
 })
 
-locaDial.addEventListener("click", () => {
-    locaDial.close()
-})
+// locaDial.addEventListener("click", () => {
+//     locaDial.close()
+// })
 
 window.addEventListener("click", e => {
     const dialDimentions2 = expertDial.getBoundingClientRect()
@@ -59,9 +59,9 @@ window.addEventListener("click", e => {
         }
     })
     
-expertDial.addEventListener("click", () => {
-    expertDial.close()
-})
+// expertDial.addEventListener("click", () => {
+//     expertDial.close()
+// })
     
     const hamburger = document.querySelector(".hamburger")
     const menu = document.querySelector(".menu-wrapper")
