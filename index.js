@@ -13,13 +13,16 @@ const cartDecrement = () =>{
         cartNumber.textContent = count
 }
 
-const openModal = document.querySelector(".open-loca-dial")
+//* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+const opendial = document.querySelector(".open-loca-dial")
 const openExpert = document.querySelector(".open-expert-dial")
 const locaDial = document.querySelector(".loca-modal")
 const expertDial = document.querySelector(".expert-dial")
-const closeModal = document.querySelector(".close-loca-dial")
+const closedial = document.querySelector(".close-loca-dial")
+const insideLocaDial = document.querySelector(".dialog-inside-wrapper")
 
-openModal.addEventListener("click", () => {
+opendial.addEventListener("click", () => {
     locaDial.show()
 })
 
@@ -39,13 +42,10 @@ window.addEventListener("click", e => {
     }
 })
 
-closeModal.addEventListener("click", () => {
+closedial.addEventListener("click", () => {
     locaDial.close()
 })
 
-// locaDial.addEventListener("click", () => {
-//     locaDial.close()
-// })
 
 window.addEventListener("click", e => {
     const dialDimentions2 = expertDial.getBoundingClientRect()
@@ -59,13 +59,12 @@ window.addEventListener("click", e => {
         }
     })
     
-// expertDial.addEventListener("click", () => {
-//     expertDial.close()
-// })
     
+//* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     const hamburger = document.querySelector(".hamburger")
     const menu = document.querySelector(".menu-wrapper")
-    const hambBar = document.querySelector(".menu")
+    const hambBar = document.querySelector(".menu-btn")
 
 hamburger.addEventListener("click", function(){
     const isOpened = hambBar.getAttribute('aria-expanded')
