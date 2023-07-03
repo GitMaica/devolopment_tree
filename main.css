@@ -361,15 +361,16 @@ main{
 
 .product-box{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 158px);
+    justify-content: space-around;
     gap: 0.5rem;
+    margin-inline: auto;
 }
 
 .products-container{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    /* width: 10rem; */
     overflow: hidden;
     border-radius: 0.8rem;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
@@ -408,7 +409,7 @@ main{
     border-radius: 4px;
 }
 
-@media(min-width: 768px){
+@media(min-width: 912px){
     .menu-btn{
         display: none;
     }

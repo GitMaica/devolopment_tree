@@ -1,20 +1,3 @@
-const cartNumber = document.querySelector("#cart-count")
-let count = 0
-
-
-const cartIncremment = () =>{
-    count += 1
-    cartNumber.textContent = count
-}
-
-const cartDecrement = () =>{
-    if(cartNumber.textContent > 0)
-        count -= 1
-        cartNumber.textContent = count
-}
-
-//* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 const opendial = document.querySelector(".open-loca-dial")
 const openExpert = document.querySelector(".open-expert-dial")
 const locaDial = document.querySelector(".loca-modal")
@@ -62,9 +45,9 @@ window.addEventListener("click", e => {
     
 //* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    const hamburger = document.querySelector(".hamburger")
-    const menu = document.querySelector(".menu-wrapper")
-    const hambBar = document.querySelector(".menu-btn")
+const hamburger = document.querySelector(".hamburger")
+const menu = document.querySelector(".menu-wrapper")
+const hambBar = document.querySelector(".menu-btn")
 
 hamburger.addEventListener("click", function(){
     const isOpened = hambBar.getAttribute('aria-expanded')
@@ -79,3 +62,28 @@ hamburger.addEventListener("click", function(){
     menu.classList.toggle("opened")
     hambBar.classList.toggle("relocate")
 })
+
+
+//* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+const cartPlus = document.querySelectorAll(".cart-btn")
+const cartNumber = document.querySelector("#cart-count")
+let count = 0
+
+
+const cartIncremment = () =>{
+    count += 1
+    cartNumber.textContent = count
+}
+
+const cartDecrement = () =>{
+    if(cartNumber.textContent > 0)
+        count -= 1
+        cartNumber.textContent = count
+}
+
+for(let i=0; i<cartPlus.length; i++){
+    cartPlus[i].addEventListener("click", function(){
+        cartIncremment()
+    })
+}
