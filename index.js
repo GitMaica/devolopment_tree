@@ -8,81 +8,70 @@ const closeExpDial = document.querySelector(".click-to-close-expert-dial")
 
 opendial.addEventListener("click", () => {
     locaDial.show()
-    // locaDial.setAttribute('aria-hidden', 'false')
+    locaDial.setAttribute("aria-hidden", "false")
 })
 
-
+openExpert.addEventListener("click", () => {
+    expertDial.show()
+    expertDial.setAttribute("aria-hidden", "false")
+})
 
 window.addEventListener("click", (e) => {
+    const locaHidden = locaDial.getAttribute("aria-hidden")
     const dialDimentions = locaDial.getBoundingClientRect()
-    // const dialDimentions2 = expertDial.getBoundingClientRect()
+    const expertHidden = expertDial.getAttribute("aria-hidden")
+    const dialDimentions2 = expertDial.getBoundingClientRect()
 
-    // const dialHidden = locaDial.getAttribute('aria-hidden')
-    // const expertHidden = expertDial.getAttribute('aria-hidden')
-
-
-    // if(dialHidden === 'false'){
-    if(
-        e.clientX < dialDimentions.left ||
-        e.clientX > dialDimentions.right ||
-        e.clientY < dialDimentions.top ||
-        e.clientY > dialDimentions.bottom
-        ) {
-            locaDial.close()
-            // locaDial.setAttribute('aria-hidden', 'true')
-
+    if(locaHidden === "false"){
+        if(
+            e.clientX < dialDimentions.left + e.offsetX ||
+            e.clientX > dialDimentions.right ||
+            e.clientY < dialDimentions.top + e.offsetY ||
+            e.clientY > dialDimentions.bottom
+            ){
+                locaDial.close()
+                locaDial.setAttribute("aria-hidden", "true")
         }
-    // }
-    // if(expertHidden ==='false'){
-    //     if(
-    //         e.clientX < dialDimentions2.left ||
-    //         e.clientX > dialDimentions2.right ||
-    //         e.clientY < dialDimentions2.top ||
-    //         e.clientY > dialDimentions2.bottom
-    //         ) {
-    //             expertDial.close()
-    //             expertDial.setAttribute('aria-hidden', 'true')
-    //         }
-    // }
-})
-
-closeDial.addEventListener("click", () =>{
-    locaDial.close()
-    // locaDial.setAttribute('aria-hidden', 'true')
+    }
+    else if(expertHidden === "false"){
+        if(
+            e.clientX < dialDimentions2.left + e.offsetX ||
+            e.clientX > dialDimentions2.right ||
+            e.clientY < dialDimentions2.top + e.offsetY ||
+            e.clientY > dialDimentions2.bottom
+            ) {
+                expertDial.close()
+                locaDial.setAttribute("aria-hidden", "true")
+            }
+    }
 })
 
 useCurrent.addEventListener("click", () => {
     locaDial.close()
-    // locaDial.setAttribute('aria-hidden', 'true')
-
+    locaDial.setAttribute("aria-hidden", "true")
 })
 
 
 // ?>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-openExpert.addEventListener("click", () => {
-    expertDial.show()
-    // expertDial.setAttribute('aria-hidden', 'false')
+// openExpert.addEventListener("click", () => {
+//     expertDial.show()
+//     expertDial.setAttribute("aria-hidden", "false")
+// })
 
-})
 
-
-window.addEventListener("click", e => {
-    const dialDimentions2 = expertDial.getBoundingClientRect()
-    if(
-        e.clientX < dialDimentions2.left ||
-        e.clientX > dialDimentions2.right ||
-        e.clientY < dialDimentions2.top ||
-        e.clientY > dialDimentions2.bottom
-        ) {
-            expertDial.close()
-        }
-    })
-
-closeExpDial.addEventListener("click", () =>{
-    expertDial.close()
-    // expertDial.setAttribute('aria-hidden', 'true')
-})
+// window.addEventListener("click", e => {
+//     const dialDimentions2 = expertDial.getBoundingClientRect()
+//     if(
+//         e.clientX < dialDimentions2.left + e.offsetX ||
+//         e.clientX > dialDimentions2.right ||
+//         e.clientY < dialDimentions2.top + e.offsetY ||
+//         e.clientY > dialDimentions2.bottom
+//         ) {
+//             expertDial.close()
+//             locaDial.setAttribute("aria-hidden", "true")
+//         }
+// })
 
 //! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
