@@ -1,54 +1,52 @@
-const opendial = document.querySelector(".open-loca-dial")
-const openExpert = document.querySelector(".open-expert-dial")
-const locaDial = document.querySelector(".loca-dial")
+const deliveryLocation = document.querySelector(".open-loca-dial")
+const askAnExpert = document.querySelector(".open-expert-dial")
+const locationDial = document.querySelector(".loca-dial")
 const expertDial = document.querySelector(".expert-dial")
 const useCurrent = document.querySelector(".current-loca")
-const closeDial = document.querySelector(".click-to-close-loca-dial")
-const closeExpDial = document.querySelector(".click-to-close-expert-dial")
 
-opendial.addEventListener("click", () => {
-    locaDial.show()
-    locaDial.setAttribute("aria-hidden", "false")
+deliveryLocation.addEventListener("click", () => {
+    locationDial.show()
+    locationDial.setAttribute("aria-hidden", "false")
 })
 
-openExpert.addEventListener("click", () => {
+askAnExpert.addEventListener("click", () => {
     expertDial.show()
     expertDial.setAttribute("aria-hidden", "false")
 })
 
 window.addEventListener("click", (e) => {
-    const locaHidden = locaDial.getAttribute("aria-hidden")
-    const dialDimentions = locaDial.getBoundingClientRect()
+    const locaHidden = locationDial.getAttribute("aria-hidden")
+    const locatDimentions = locationDial.getBoundingClientRect()
     const expertHidden = expertDial.getAttribute("aria-hidden")
-    const dialDimentions2 = expertDial.getBoundingClientRect()
+    const expertDimentions = expertDial.getBoundingClientRect()
 
     if(locaHidden === "false"){
         if(
-            e.clientX < dialDimentions.left + e.offsetX ||
-            e.clientX > dialDimentions.right ||
-            e.clientY < dialDimentions.top + e.offsetY ||
-            e.clientY > dialDimentions.bottom
+            e.clientX < locatDimentions.left + e.offsetX ||
+            e.clientX > locatDimentions.right ||
+            e.clientY < locatDimentions.top + e.offsetY ||
+            e.clientY > locatDimentions.bottom
             ){
-                locaDial.close()
-                locaDial.setAttribute("aria-hidden", "true")
+                locationDial.close()
+                locationDial.setAttribute("aria-hidden", "true")
         }
     }
     else if(expertHidden === "false"){
         if(
-            e.clientX < dialDimentions2.left + e.offsetX ||
-            e.clientX > dialDimentions2.right ||
-            e.clientY < dialDimentions2.top + e.offsetY ||
-            e.clientY > dialDimentions2.bottom
+            e.clientX < expertDimentions.left + e.offsetX ||
+            e.clientX > expertDimentions.right ||
+            e.clientY < expertDimentions.top + e.offsetY ||
+            e.clientY > expertDimentions.bottom
             ) {
                 expertDial.close()
-                locaDial.setAttribute("aria-hidden", "true")
+                locationDial.setAttribute("aria-hidden", "true")
             }
     }
 })
 
 useCurrent.addEventListener("click", () => {
-    locaDial.close()
-    locaDial.setAttribute("aria-hidden", "true")
+    locationDial.close()
+    locationDial.setAttribute("aria-hidden", "true")
 })
 
 
