@@ -4,21 +4,58 @@ const locationDial = document.querySelector(".loca-dial")
 const expertDial = document.querySelector(".expert-dial")
 const useCurrent = document.querySelector(".current-loca")
 
-deliveryLocation.addEventListener("click", () => {
-    locationDial.show()
-    locationDial.setAttribute("aria-hidden", "false")
+const firtsRow = document.querySelector(".first-row")
+const thridRow = document.querySelector(".third-row")
+const hamburger = document.querySelector(".hamburger")
+const menu = document.querySelector(".menu-wrapper")
+const hambBar = document.querySelector(".menu-btn")
+
+
+thridRow.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("open-loca-dial")){
+        locationDial.show()
+        locationDial.setAttribute("aria-hidden", "false")
+    }
+    else if(e.target.classList.contains("open-expert-dial")){
+        expertDial.show()
+        expertDial.setAttribute("aria-hidden", "false")
+    }
 })
 
-askAnExpert.addEventListener("click", () => {
-    expertDial.show()
-    expertDial.setAttribute("aria-hidden", "false")
-})
+document.onclick = function(e){
+    if(e.target.id !== "menu-bar" && e.target.id !== "hamburger-icon"){
+        hamburger.classList.remove("active")
+        menu.classList.remove("opened")
+        hambBar.classList.remove("relocate")
+    }
+}
+
+hamburger.onclick = function(){
+    const isOpened = hambBar.getAttribute('aria-expanded')
+    
+    if(isOpened === "true"){
+        hambBar.setAttribute("aria-expanded", "false")
+        hambBar.setAttribute("aria-hidden", "false")
+    } else{
+        hambBar.setAttribute("aria-expanded", "true")
+        hambBar.setAttribute("aria-hidden", "true")
+    }
+    
+    hamburger.classList.toggle("active")
+    menu.classList.toggle("opened")
+    hambBar.classList.toggle("relocate")
+}
+
+
+//! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 window.addEventListener("click", (e) => {
     const locaHidden = locationDial.getAttribute("aria-hidden")
     const locatDimentions = locationDial.getBoundingClientRect()
     const expertHidden = expertDial.getAttribute("aria-hidden")
     const expertDimentions = expertDial.getBoundingClientRect()
+
 
     if(locaHidden === "false"){
         if(
@@ -48,49 +85,6 @@ useCurrent.addEventListener("click", () => {
     locationDial.close()
     locationDial.setAttribute("aria-hidden", "true")
 })
-
-
-// ?>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// openExpert.addEventListener("click", () => {
-//     expertDial.show()
-//     expertDial.setAttribute("aria-hidden", "false")
-// })
-
-
-// window.addEventListener("click", e => {
-//     const dialDimentions2 = expertDial.getBoundingClientRect()
-//     if(
-//         e.clientX < dialDimentions2.left + e.offsetX ||
-//         e.clientX > dialDimentions2.right ||
-//         e.clientY < dialDimentions2.top + e.offsetY ||
-//         e.clientY > dialDimentions2.bottom
-//         ) {
-//             expertDial.close()
-//             locaDial.setAttribute("aria-hidden", "true")
-//         }
-// })
-
-//! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-const hamburger = document.querySelector(".hamburger")
-const menu = document.querySelector(".menu-wrapper")
-const hambBar = document.querySelector(".menu-btn")
-
-hamburger.addEventListener("click", function(){
-    const isOpened = hambBar.getAttribute('aria-expanded')
-
-    if(isOpened === "true"){
-        hambBar.setAttribute("aria-expanded", "false")
-    } else{
-        hambBar.setAttribute("aria-expanded", "true")
-    }
-
-    hamburger.classList.toggle("active")
-    menu.classList.toggle("opened")
-    hambBar.classList.toggle("relocate")
-})
-
 
 //! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -122,4 +116,3 @@ productBox.addEventListener("click", (e) =>{
         cartIncremment()
     }
 })
-
