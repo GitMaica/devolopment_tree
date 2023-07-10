@@ -252,17 +252,114 @@ select {
 .dialog-inside-wrapper{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
     align-items: center;
     text-align: center;
     color: rgb(0, 0, 0);
     min-width: 250px;
-    height: 200px;
-    padding: 20px;
+    min-height: 200px;
+    padding: 24px;
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
     z-index: 999;
+}
+
+.details-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+details{
+    position: relative;
+    color: #000000;
+    width: 95px;
+    background-color: rgb(227, 227, 227);
+    padding-block: 4px;
+    padding-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+details::marker{
+    display: none;
+}
+
+summary{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: inherit;
+    list-style: none;
+}
+
+.city-select{
+    gap: 30px;
+}
+
+details[open] > summary > span{
+    transform: rotate(180deg);
+}
+
+summary>span{
+    line-height: 0;
+    font-size: 24px;
+}
+
+.parish-options{
+    position: absolute;
+    width: 150px;
+    height: 110px;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow-y: auto;
+    z-index: 999;
+    border: 1px  solid #000000;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
+}
+
+.parish-options > ul > li> button{
+    color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 8px 5px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px  solid #000000;
+}
+
+.city-options{
+    position: absolute;
+    background-color: #ffffff;
+    width: 115px;
+    height: 100px;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow-y: auto;
+    z-index: 999;
+    border: 1px  solid #000000;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
+}
+
+.city-options > ul > li > button{
+    color: #000000;
+    width: 100%;
+    padding: 8px 0px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px  solid rgb(0, 0, 0);
+}
+
+.set-location{
+    padding: 4px 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.current-loca{
+    padding: 4px 8px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .expert-dial{
