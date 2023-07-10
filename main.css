@@ -122,10 +122,15 @@ select {
     transform: translateX(100%);
     transition: transform 0.4s ease-out;
     z-index: 999;
+    overflow-y: hidden;
 }
 
 .menu-wrapper.opened{
     transform: translateX(0%);
+}
+
+.opened{
+    overflow: hidden;
 }
 
 .menu-wrapper>ul{
@@ -393,6 +398,7 @@ summary>span{
     border: none;
     height: 32px;
     width: 32px;
+    z-index: 700;
 }
 
 .hamburger{
@@ -440,7 +446,7 @@ summary>span{
 .menu-btn.relocate{
     position: absolute;
     inset: 50% auto 20% auto;
-    z-index: 600;
+    z-index: 700;
 }
 
 .information-bar-container{
