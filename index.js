@@ -31,10 +31,10 @@ const cartDecrement = () =>{
         cartNumber.textContent = count
 }
 
-// for(let i = 0; i < cartPlus.length; i++){
-//     cartPlus[i].addEventListener("click", function(){
-//     })
-// }
+for(let i = 0; i < cartPlus.length; i++){
+    cartPlus[i].addEventListener("click", function(){
+    })
+}
 
 productBox.addEventListener("click", (e) =>{
     const clickedBtn = e.target.classList.contains("cart-btn")
@@ -128,6 +128,5 @@ menuBtn.onclick = function(){
         menuBtn.setAttribute("aria-expanded", "false")
         menuBtn.setAttribute("aria-hidden", "true")
         body.style.overflow = "auto"
-    }
-    
+    }    
 }
