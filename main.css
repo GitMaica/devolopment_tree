@@ -71,7 +71,6 @@ select {
 /* __________________________RESETS_________________________________ */
 
 .nav-container{
-    min-height: 8rem;
     border-bottom: 2px solid grey;
 }
 
@@ -216,7 +215,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -275,6 +274,7 @@ select {
 }
 
 .assist-btns>button{
+    font-size: 14px;
     background: transparent;
     border: 1px solid grey;
     border-radius: 50vw;
@@ -431,7 +431,7 @@ summary>span{
     background: transparent;
     border: none;
     height: 32px;
-    width: 32px;
+    min-width: 32px;
     z-index: 700;
 }
 

@@ -31,74 +31,72 @@ const cartDecrement = () =>{
         cartNumber.textContent = count
 }
 
-for(let i = 0; i < cartPlus.length; i++){
-    cartPlus[i].addEventListener("click", function(){
+// for(let i = 0; i < cartPlus.length; i++){
+//     cartPlus[i].addEventListener("click", function(){
+//     })
+// }
+if(body.id === "home"){
+    productBox.addEventListener("click", (e) =>{
+        const clickedBtn = e.target.classList.contains("cart-btn")
+        if(clickedBtn){
+            cartIncremment()
+        }
+    })
+
+    //! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+    thridRow.addEventListener("click", (e) =>{
+        if(e.target.classList.contains("open-loca-dial")){
+            locationDial.show()
+            locationDial.setAttribute("aria-hidden", "false")
+            body.style.overflow = "hidden"
+        }
+        else if(e.target.classList.contains("open-expert-dial")){
+            expertDial.show()
+            expertDial.setAttribute("aria-hidden", "false")
+            body.style.overflow = "hidden"
+        }
+    })
+
+    body.addEventListener("click", (e) => {
+        const locaHidden = locationDial.getAttribute("aria-hidden")
+        const locatDimentions = locationDial.getBoundingClientRect()
+        const expertHidden = expertDial.getAttribute("aria-hidden")
+        const expertDimentions = expertDial.getBoundingClientRect()
+    
+    
+        if(locaHidden === "false"){
+            if(
+                e.clientX < locatDimentions.left + e.offsetX ||
+                e.clientX > locatDimentions.right ||
+                e.clientY < locatDimentions.top + e.offsetY ||
+                e.clientY > locatDimentions.bottom
+                ){
+                    locationDial.close()
+                    locationDial.setAttribute("aria-hidden", "true")
+                    body.style.overflow = "auto"
+                }
+        }
+        else if(expertHidden === "false"){
+            if(
+                e.clientX < expertDimentions.left + e.offsetX ||
+                e.clientX > expertDimentions.right ||
+                e.clientY < expertDimentions.top + e.offsetY ||
+                e.clientY > expertDimentions.bottom
+                ) {
+                    expertDial.close()
+                    expertDial.setAttribute("aria-hidden", "true")
+                    body.style.overflow = "auto"
+                }
+            }
+    })
+        
+    useCurrent.addEventListener("click", () => {
+        locationDial.close()
+        locationDial.setAttribute("aria-hidden", "true")
+        body.style.overflow = "auto"
     })
 }
-
-productBox.addEventListener("click", (e) =>{
-    const clickedBtn = e.target.classList.contains("cart-btn")
-    if(clickedBtn){
-        cartIncremment()
-    }
-})
-
-
-//! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-thridRow.addEventListener("click", (e) =>{
-    if(e.target.classList.contains("open-loca-dial")){
-        locationDial.show()
-        locationDial.setAttribute("aria-hidden", "false")
-        body.style.overflow = "hidden"
-    }
-    else if(e.target.classList.contains("open-expert-dial")){
-        expertDial.show()
-        expertDial.setAttribute("aria-hidden", "false")
-        body.style.overflow = "hidden"
-    }
-})
-
-body.addEventListener("click", (e) => {
-    const locaHidden = locationDial.getAttribute("aria-hidden")
-    const locatDimentions = locationDial.getBoundingClientRect()
-    const expertHidden = expertDial.getAttribute("aria-hidden")
-    const expertDimentions = expertDial.getBoundingClientRect()
-
-
-    if(locaHidden === "false"){
-        if(
-            e.clientX < locatDimentions.left + e.offsetX ||
-            e.clientX > locatDimentions.right ||
-            e.clientY < locatDimentions.top + e.offsetY ||
-            e.clientY > locatDimentions.bottom
-            ){
-                locationDial.close()
-                locationDial.setAttribute("aria-hidden", "true")
-                body.style.overflow = "auto"
-            }
-    }
-    else if(expertHidden === "false"){
-        if(
-            e.clientX < expertDimentions.left + e.offsetX ||
-            e.clientX > expertDimentions.right ||
-            e.clientY < expertDimentions.top + e.offsetY ||
-            e.clientY > expertDimentions.bottom
-            ) {
-                expertDial.close()
-                expertDial.setAttribute("aria-hidden", "true")
-                body.style.overflow = "auto"
-            }
-        }
-})
-    
-useCurrent.addEventListener("click", () => {
-    locationDial.close()
-    locationDial.setAttribute("aria-hidden", "true")
-    body.style.overflow = "auto"
-})
-
 
 //! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
